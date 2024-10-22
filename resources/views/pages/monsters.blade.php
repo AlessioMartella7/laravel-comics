@@ -11,31 +11,20 @@
             </div>
 
             @foreach ($monsters as $monster)
-                <div class="col-4 py-2">
+                <div class="col-3 py-2">
 
-                    <ul>
-                        <li>
-                            <img class="img-fluid" src="{{ $monster['image'] }}" alt="{{ $monster['name'] }}">
-                        </li>
-                        <li>
-                            <p class="fw-bold fs-5">Name: {{ $monster['name'] }}</p>
-                        </li>
-                        <li>
-                            <p class="fw-bold fs-5">Height: {{ $monster['height'] }}</p>
-                        </li>
-                        <li>
-                            <p class="fw-bold fs-5">Weight: {{ $monster['weight'] }}</p>
-                        </li>
-                        <li>
-                            <p class="fw-bold fs-5">Victims: {{ $monster['victims'] }}</p>
-                        </li>
-                        <li>
-                            <p class="fw-bold fs-5">Hometown: {{ $monster['hometown'] }}</p>
-                        </li>
-                        <li>
-                            <p class="fw-bold fs-5">In Activity: {{ $monster['active'] ? 'Yes' : 'No' }}</p>
-                        </li>
-                    </ul>
+                    <div class="card h-100 pb-0" style="width: 18rem;">
+                        <img class="card-img-top h-50 img-fluid " src="{{ $monster['image'] }}" alt="{{ $monster['name'] }}">
+                        <div class="card-body">
+                            <p class="card-text fw-bold fs-5">Name: {{ $monster['name'] }}</p>
+                            <p class="card-text fw-bold fs-5">Height: {{ $monster['height'] }}</p>
+                            <p class="card-text fw-bold fs-5">Weight: {{ $monster['weight'] }}</p>
+                            <p class="card-text fw-bold fs-5">Victims: {{ $monster['victims'] }}</p>
+                            <p class="card-text fw-bold fs-5">Hometown: {{ $monster['hometown'] }}</p>
+                            <p class="card-text fw-bold fs-5">In Activity: {{ $monster['active'] ? 'Yes' : 'No' }}</p>
+                        </div>
+                    </div>
+
                 </div>
             @endforeach
         </div>

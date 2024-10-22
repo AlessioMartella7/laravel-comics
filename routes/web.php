@@ -15,9 +15,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('pages.home');
-});
+})->name('home');
 
 Route::get('/monsters', function () {
     $monsters = config('database.monsters');
     return view('pages.monsters', compact('monsters'));
-});
+
+})->name('famous-monsters');
