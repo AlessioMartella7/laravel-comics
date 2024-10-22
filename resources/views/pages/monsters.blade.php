@@ -13,9 +13,10 @@
             @foreach ($monsters as $monster)
                 <div class="col-3 py-4">
 
-                    <div class="card h-100 pb-0 bg-black rounded" style="width: 18rem;">
-                        <img class="card-img-top h-50 img-fluid " src="{{ $monster['image'] }}" alt="{{ $monster['name'] }}">
-                        <div class="card-body bg-dark text-white">
+                    <div class="card h-100 pb-0 bg-black rounded p-1" style="width: 18rem;">
+                        <img class="card-img-top h-50 img-fluid rounded " src="{{ $monster['image'] }}"
+                            alt="{{ $monster['name'] }}">
+                        <div class="card-body bg-dark text-white rounded my-1">
                             <p class="card-text fw-bold fs-5">Name: {{ $monster['name'] }}</p>
                             <p class="card-text fw-bold fs-5">Height: {{ $monster['height'] }}</p>
                             <p class="card-text fw-bold fs-5">Weight: {{ $monster['weight'] }}</p>
