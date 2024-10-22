@@ -3,7 +3,9 @@
 @section('page-title', 'Homepage')
 
 @section('main-content')
-
-    <h1>Homepage</h1>
-
+    <div class="container">
+        <div class="row col-12 py-5">
+            <h1 class="text-danger text-center">Welcome to the party...</h1>
+        </div>
+    </div>
 @endsection
