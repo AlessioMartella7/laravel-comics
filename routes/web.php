@@ -18,5 +18,6 @@ Route::get('/', function () {
 });
 
 Route::get('/monsters', function () {
-    return view('pages.monsters');
+    $monsters = config('database.monsters');
+    return view('pages.monsters', compact('monsters'));
 });
