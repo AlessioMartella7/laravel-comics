@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('page-title', 'Homepage')
+@section('page-title', 'Famous Monsters')
 
 @section('main-content')
 

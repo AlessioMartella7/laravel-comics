@@ -4,148 +4,114 @@ use Illuminate\Support\Str;
 
 return [
 
-    /*
-    |--------------------------------------------------------------------------
-    | Default Database Connection Name
-    |--------------------------------------------------------------------------
-    |
-    | Here you may specify which of the database connections below you wish
-    | to use as your default connection for all database work. Of course
-    | you may use many connections at once using the Database library.
-    |
-    */
-
-    'default' => env('DB_CONNECTION', 'mysql'),
-
-    /*
-    |--------------------------------------------------------------------------
-    | Database Connections
-    |--------------------------------------------------------------------------
-    |
-    | Here are each of the database connections setup for your application.
-    | Of course, examples of configuring each database platform that is
-    | supported by Laravel is shown below to make development simple.
-    |
-    |
-    | All database work in Laravel is done through the PHP PDO facilities
-    | so make sure you have the driver for your particular database of
-    | choice installed on your machine before you begin development.
-    |
-    */
-
-    'connections' => [
-
-        'sqlite' => [
-            'driver' => 'sqlite',
-            'url' => env('DATABASE_URL'),
-            'database' => env('DB_DATABASE', database_path('database.sqlite')),
-            'prefix' => '',
-            'foreign_key_constraints' => env('DB_FOREIGN_KEYS', true),
+    'horror_characters' => [
+        [
+            "name" => "Jason Voorhees",
+            "image" => "https://example.com/jason_voorhees.jpg",
+            "height" => "195 cm",
+            "weight" => "115 kg",
+            "victims" => 157,
+            "hometown" => "Crystal Lake, USA",
+            "active" => true
         ],
-
-        'mysql' => [
-            'driver' => 'mysql',
-            'url' => env('DATABASE_URL'),
-            'host' => env('DB_HOST', '127.0.0.1'),
-            'port' => env('DB_PORT', '3306'),
-            'database' => env('DB_DATABASE', 'forge'),
-            'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),
-            'unix_socket' => env('DB_SOCKET', ''),
-            'charset' => 'utf8mb4',
-            'collation' => 'utf8mb4_unicode_ci',
-            'prefix' => '',
-            'prefix_indexes' => true,
-            'strict' => true,
-            'engine' => null,
-            'options' => extension_loaded('pdo_mysql') ? array_filter([
-                PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
-            ]) : [],
+        [
+            "name" => "Freddy Krueger",
+            "image" => "https://example.com/freddy_krueger.jpg",
+            "height" => "175 cm",
+            "weight" => "75 kg",
+            "victims" => 40,
+            "hometown" => "Springwood, USA",
+            "active" => true
         ],
-
-        'pgsql' => [
-            'driver' => 'pgsql',
-            'url' => env('DATABASE_URL'),
-            'host' => env('DB_HOST', '127.0.0.1'),
-            'port' => env('DB_PORT', '5432'),
-            'database' => env('DB_DATABASE', 'forge'),
-            'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),
-            'charset' => 'utf8',
-            'prefix' => '',
-            'prefix_indexes' => true,
-            'search_path' => 'public',
-            'sslmode' => 'prefer',
+        [
+            "name" => "Michael Myers",
+            "image" => "https://example.com/michael_myers.jpg",
+            "height" => "190 cm",
+            "weight" => "90 kg",
+            "victims" => 121,
+            "hometown" => "Haddonfield, USA",
+            "active" => true
         ],
-
-        'sqlsrv' => [
-            'driver' => 'sqlsrv',
-            'url' => env('DATABASE_URL'),
-            'host' => env('DB_HOST', 'localhost'),
-            'port' => env('DB_PORT', '1433'),
-            'database' => env('DB_DATABASE', 'forge'),
-            'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),
-            'charset' => 'utf8',
-            'prefix' => '',
-            'prefix_indexes' => true,
-            // 'encrypt' => env('DB_ENCRYPT', 'yes'),
-            // 'trust_server_certificate' => env('DB_TRUST_SERVER_CERTIFICATE', 'false'),
+        [
+            "name" => "Chucky",
+            "image" => "https://example.com/chucky.jpg",
+            "height" => "66 cm",
+            "weight" => "7 kg",
+            "victims" => 74,
+            "hometown" => "Chicago, USA",
+            "active" => true
         ],
-
-    ],
-
-    /*
-    |--------------------------------------------------------------------------
-    | Migration Repository Table
-    |--------------------------------------------------------------------------
-    |
-    | This table keeps track of all the migrations that have already run for
-    | your application. Using this information, we can determine which of
-    | the migrations on disk haven't actually been run in the database.
-    |
-    */
-
-    'migrations' => 'migrations',
-
-    /*
-    |--------------------------------------------------------------------------
-    | Redis Databases
-    |--------------------------------------------------------------------------
-    |
-    | Redis is an open source, fast, and advanced key-value store that also
-    | provides a richer body of commands than a typical key-value system
-    | such as APC or Memcached. Laravel makes it easy to dig right in.
-    |
-    */
-
-    'redis' => [
-
-        'client' => env('REDIS_CLIENT', 'phpredis'),
-
-        'options' => [
-            'cluster' => env('REDIS_CLUSTER', 'redis'),
-            'prefix' => env('REDIS_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_').'_database_'),
+        [
+            "name" => "Leatherface",
+            "image" => "https://example.com/leatherface.jpg",
+            "height" => "183 cm",
+            "weight" => "120 kg",
+            "victims" => 31,
+            "hometown" => "Newt, Texas, USA",
+            "active" => true
         ],
-
-        'default' => [
-            'url' => env('REDIS_URL'),
-            'host' => env('REDIS_HOST', '127.0.0.1'),
-            'username' => env('REDIS_USERNAME'),
-            'password' => env('REDIS_PASSWORD'),
-            'port' => env('REDIS_PORT', '6379'),
-            'database' => env('REDIS_DB', '0'),
+        [
+            "name" => "Pennywise",
+            "image" => "https://example.com/pennywise.jpg",
+            "height" => "Varies",
+            "weight" => "Varies",
+            "victims" => 100,
+            "hometown" => "Derry, Maine, USA",
+            "active" => true
         ],
-
-        'cache' => [
-            'url' => env('REDIS_URL'),
-            'host' => env('REDIS_HOST', '127.0.0.1'),
-            'username' => env('REDIS_USERNAME'),
-            'password' => env('REDIS_PASSWORD'),
-            'port' => env('REDIS_PORT', '6379'),
-            'database' => env('REDIS_CACHE_DB', '1'),
+        [
+            "name" => "Ghostface",
+            "image" => "https://example.com/ghostface.jpg",
+            "height" => "178 cm",
+            "weight" => "70 kg",
+            "victims" => 49,
+            "hometown" => "Woodsboro, USA",
+            "active" => true
         ],
-
-    ],
-
+        [
+            "name" => "Jigsaw",
+            "image" => "https://example.com/jigsaw.jpg",
+            "height" => "178 cm",
+            "weight" => "75 kg",
+            "victims" => 86,
+            "hometown" => "New York, USA",
+            "active" => false
+        ],
+        [
+            "name" => "Samara Morgan",
+            "image" => "https://example.com/samara_morgan.jpg",
+            "height" => "140 cm",
+            "weight" => "30 kg",
+            "victims" => 33,
+            "hometown" => "Moesk, USA",
+            "active" => true
+        ],
+        [
+            "name" => "Candyman",
+            "image" => "https://example.com/candyman.jpg",
+            "height" => "196 cm",
+            "weight" => "91 kg",
+            "victims" => 22,
+            "hometown" => "Chicago, USA",
+            "active" => true
+        ],
+        [
+            "name" => "Pinhead",
+            "image" => "https://example.com/pinhead.jpg",
+            "height" => "185 cm",
+            "weight" => "Unknown",
+            "victims" => "Countless",
+            "hometown" => "Hell",
+            "active" => true
+        ],
+        [
+            "name" => "The Babadook",
+            "image" => "https://example.com/babadook.jpg",
+            "height" => "200 cm",
+            "weight" => "Unknown",
+            "victims" => "Few",
+            "hometown" => "Australia",
+            "active" => true
+        ]
+    ]
 ];
