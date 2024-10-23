@@ -22,3 +22,9 @@ Route::get('/monsters', function () {
     return view('pages.monsters', compact('monsters'));
 
 })->name('famous-monsters');
+
+Route::get('/monsters/{index}', function(string $index){
+    $monster = config('database.monsters')[$index];
+    return view('pages.show',compact('monster'));
+})->name('pages-show');
+
