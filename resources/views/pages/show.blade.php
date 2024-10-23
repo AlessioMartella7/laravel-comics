@@ -11,8 +11,7 @@
             </div>
             <div class="col-12 d-flex justify-content-center py-4">
                 <div class="card h-100 pb-0 bg-black rounded p-1" style="width: 18rem;">
-                    <img class="card-img-top h-50 img-fluid rounded " src="{{ $monster['image'] }}"
-                        alt="{{ $monster['name'] }}">
+                    <img class="card-img-top height-md  rounded " src="{{ $monster['image'] }}" alt="{{ $monster['name'] }}">
                     <div class="card-body bg-dark text-white rounded my-1">
                         <p class="card-text fw-bold fs-5">Name: {{ $monster['name'] }}</p>
                         <p class="card-text fw-bold fs-5">Height: {{ $monster['height'] }}</p>
@@ -22,6 +21,12 @@
                         <p class="card-text fw-bold fs-5">In Activity: {{ $monster['active'] ? 'Yes' : 'No' }}</p>
                     </div>
                 </div>
+            </div>
+            {{-- back button --}}
+            <div class="col-12 text-center">
+                <a href="{{ route('famous-monsters') }}">
+                    <button class="btn btn-danger text-dark fs-4 fw-bold px-3">Back</button>
+                </a>
             </div>
         </div>
     </div>
